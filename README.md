@@ -43,7 +43,6 @@ python app.py
 ![fsm](./img/show-fsm.png)
 
 ## Usage and Command
-<<<<<<< HEAD
 * state 說明
 
 	* 起始 state 為 `user`.
@@ -81,47 +80,6 @@ python app.py
 * 功能3:
 
 	* 輸入: "help" 可查看bot的說明
-=======
-* state 隤芣�
-
-	* 韏瑕� state �� `user`.
-	* 頛詨"eng" 
-		+ �脣 `level1` state嚗�撠��脣`level1` state嚗�蝑��脣`level3` state
-		+ ��銝剛蝑�1�tate嚗�憒level2`�`level1`
-		+ �灼level1`蝑�level3`蝑������tate 
-		+ 10憿���嚗��躬user` state
-	  
-	* 頛詨"logic" 
-		+ �脣 `logic1` state嚗�憿����脣`logic2` state
-		+ 6憿���嚗��躬user` state
-	  
-	* 頛詨"help"
-		+ �脣`description` state 銝血��� `user` state
-
-
-* �1:�望��桀�皜祇�(擃葉7000摮�)
-
-	* 頛詨 "eng" ���
-	* 蝑��臬銝��摨佗�蝑��銝�摨� 
-	* �望�10憿�蝑�＊蝷箸迤蝣箇�獢�
-	* 蝯����＊蝷箇�撠���
-	 
- � � �
-* �2:蝪∪�箏�皜祇�
-
-	* 頛詨 "logic" ���
-	* 憿�誑��憿舐內
-	* �望�6憿�蝑�＊蝷箸迤蝣箇�獢�
-	* 蝯����＊蝷箇�撠���
-	* ��憿�詨�憿�敺�憿�耦憿�
-
-
-* �3:
-
-	* 頛詨: "help" �舀�ot�牧��
->>>>>>> 5e86206f31b23bdc8c262be3a37ed36e60d34680
 	
-
-
 ## Author
 [石家瑋](https://github.com/F74032099)
