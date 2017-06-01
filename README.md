@@ -46,11 +46,15 @@ python app.py
 ## Usage and Command
 
 起始 state 為 `user`.
+
 功能1:英文單字測驗(高中7000字)
+
       答對可到下一個難度，答錯則到對一個難度
 功能2:簡單智商測驗
+
      前三題為數字題，後三題為圖形題
 功能3:
+
 	* 輸入: "help" 可查看bot的說明
 * user
 	* 輸入: "help"
