@@ -27,7 +27,7 @@ class TocMachine(GraphMachine):
 	def on_enter_description(self, update):
 		update.message.reply_text("功能1:英文單字測驗(高中7000字)\n"
 								 +"輸入eng開始測驗，測驗共分三個難度。\n"
-								 +"答對可到下一個難度，答錯則到對一個難度\n"
+								 +"答對可到下一個難度，答錯則到倒退一個難度\n"
 								 +"功能2:簡單智商測驗\n"
 								 +"輸入logic開始測驗\n"
 								 +"前三題為數字題，後三題為圖形題。")
