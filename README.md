@@ -47,14 +47,18 @@ python app.py
 * state 說明
 
 	* 起始 state 為 `user`.
-	* 輸入"eng" 進入 `level1` state，答對時進入`level1` state，再答對則進入`level3` state
-	
- 	 過程中若答錯則倒退1個state，例如`level2`回到`level1`。
-	 
-	 在`level1`答錯或`level3`答對時不改變state
-	 
-	 10題結束後，回到`user` state
-
+	* 輸入"eng" 
+	  + 進入 `level1` state，答對時進入`level1` state，再答對則進入`level3` state
+ 	  + 過程中若答錯則倒退1個state，例如`level2`回到`level1`。 
+	  + 在`level1`答錯或`level3`答對時會回到原本的state 
+	  + 10題結束後，回到`user` state
+	  
+	* 輸入"logic" 
+	  + 進入 `logic1` state，三題結束後進入`logic2` state
+	  + 6題結束後，回到`user` state
+	  
+	* 輸入"help"
+	  + 進入`description` state 並回到 `user` state
 
 * 功能1:英文單字測驗(高中7000字)
 
