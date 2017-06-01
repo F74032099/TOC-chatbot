@@ -1,11 +1,7 @@
 # TOC Project 2017
 A telegram bot based on a finite state machine
 
-<<<<<<< HEAD
 英文單字測驗及邏輯測驗
-=======
-�望��桀�皜祇���頛舀葫撽�
->>>>>>> 5e86206f31b23bdc8c262be3a37ed36e60d34680
 
 ## Setup
 
@@ -72,7 +68,7 @@ python app.py
 	* 共有10題，答錯會顯示正確答案
 	* 結束時，會顯示答對題數
 	
- ? ? ?
+
 * 功能2:簡單智商測驗
 
 	* 輸入 "logic" 開始遊戲
@@ -128,8 +124,4 @@ python app.py
 
 
 ## Author
-<<<<<<< HEAD
 [石家瑋](https://github.com/F74032099)
-=======
-[�喳振�(https://github.com/F74032099)
->>>>>>> 5e86206f31b23bdc8c262be3a37ed36e60d34680
