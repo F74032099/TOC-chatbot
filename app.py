@@ -7,38 +7,138 @@ from flask import Flask, request, send_file
 from fsm import TocMachine
 
 
-API_TOKEN = '290280488:AAFEklzLlgRdhLfuwwlLWR5-MWUvDGEDBuo'
-WEBHOOK_URL = 'https://adba55dc.ngrok.io/hook'
+API_TOKEN = '396505069:AAEZCb1gBOxv1zKzOaxs0KOgBwoNbaQEh1o'
+WEBHOOK_URL = 'https://d1857eff.ngrok.io/hook'
 
 app = Flask(__name__)
 bot = telegram.Bot(token=API_TOKEN)
 machine = TocMachine(
     states=[
         'user',
-        'state1',
-        'state2'
+        'description',
+        'level1',
+		'level2',
+		'level3',
+		'logic1',
+		'logic2',
+		'level1_err',
+		'level3_correct',
+		'logic1_reply',
+		'logic2_reply'
     ],
     transitions=[
         {
             'trigger': 'advance',
             'source': 'user',
-            'dest': 'state1',
-            'conditions': 'is_going_to_state1'
+            'dest': 'description',
+            'conditions': 'is_going_to_description'
         },
+		{	#back to init
+			'trigger': 'advance',
+            'source': ['level3','level2','level1'],
+            'dest': 'user',
+			'conditions': 'back_to_init'
+		},
         {
             'trigger': 'advance',
             'source': 'user',
-            'dest': 'state2',
-            'conditions': 'is_going_to_state2'
-        },
-        {
-            'trigger': 'go_back',
-            'source': [
-                'state1',
-                'state2'
-            ],
-            'dest': 'user'
-        }
+            'dest': 'level1',
+            'conditions': 'is_going_to_level1'
+        },	
+		{
+			'trigger': 'advance',
+            'source': 'level1',
+            'dest': 'level2',
+			'conditions': 'is_going_to_level2'
+		},
+		{
+			'trigger': 'advance',
+            'source': 'level2',
+            'dest': 'level3',
+			'conditions': 'is_going_to_level3'
+		},
+		{	
+			'trigger': 'advance',
+            'source': 'level3',
+            'dest': 'level3_correct',
+			'conditions': 'is_going_to_level3_correct'
+		},
+		
+		{
+			'trigger': 'advance',
+            'source': 'user',
+            'dest': 'logic1',
+			'conditions': 'is_going_to_logic1'
+		},
+		{
+			'trigger': 'advance',
+            'source': 'logic1',
+            'dest': 'logic2',
+			'conditions': 'is_going_to_logic2'
+		},
+		{	#logic2 back to init
+			'trigger': 'advance',
+            'source': 'logic2',
+            'dest': 'user',
+			'conditions': 'logic_to_init'
+		},
+		{	#ans err
+			'trigger': 'advance',
+            'source': 'level3',
+            'dest': 'level2',
+			'conditions': 'wrong_ans'
+		},
+		{	#ans err
+			'trigger': 'advance',
+            'source': 'level2',
+            'dest': 'level1',
+			'conditions': 'wrong_ans'
+		},
+		{	#ans err
+			'trigger': 'advance',
+            'source': 'level1',
+            'dest': 'level1_err',
+			'conditions': 'wrong_ans'
+		},
+		
+		{	
+			'trigger': 'go_back',
+            'source': 'level1_err',
+            'dest': 'level1',
+		},
+		{	
+			'trigger': 'go_back',
+            'source': 'level3_correct',
+            'dest': 'level3',
+		},
+		{	
+			'trigger': 'go_back',
+            'source': 'description',
+            'dest': 'user',
+		},
+		{	
+			'trigger': 'go_back',
+            'source': 'logic1_reply',
+            'dest': 'logic1',
+		},
+		{	
+			'trigger': 'go_back',
+            'source': 'logic2_reply',
+            'dest': 'logic2',
+		},
+		{	#logic1 reply
+			'trigger': 'advance',
+            'source': 'logic1',
+            'dest': 'logic1_reply',
+			'conditions': 'user_response'
+		},
+		{	#logic2 reply
+			'trigger': 'advance',
+            'source': 'logic2',
+            'dest': 'logic2_reply',
+			'conditions': 'user_response'
+		},
+		
     ],
     initial='user',
     auto_transitions=False,
