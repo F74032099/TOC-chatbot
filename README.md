@@ -60,6 +60,7 @@ python app.py
 	* 輸入"help"
 		+ 進入`description` state 並回到 `user` state
 
+
 * 功能1:英文單字測驗(高中7000字)
 
 	* 輸入 "eng" 開始遊戲
@@ -75,7 +76,8 @@ python app.py
 	* 共有6題，答錯會顯示正確答案
 	* 結束時，會顯示答對題數
 	* 前三題為數字題，後三題為圖形題
-	
+
+
 * 功能3:
 
 	* 輸入: "help" 可查看bot的說明
