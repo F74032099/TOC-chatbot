@@ -66,6 +66,7 @@ python app.py
 	* 答對可到下一個難度，答錯則到倒退一個難度 
 	* 共有10題，答錯會顯示正確答案
 	* 結束時，會顯示答對題數
+![eng](./img/eng.png)
 	
 
 * 功能2:簡單智商測驗
@@ -75,11 +76,12 @@ python app.py
 	* 共有6題，答錯會顯示正確答案
 	* 結束時，會顯示答對題數
 	* 前三題為數字題，後三題為圖形題
-
+![logic](./img/logic.png)
 
 * 功能3:
 
 	* 輸入: "help" 可查看bot的說明
-	
+![help](./img/help.png)	
+
 ## Author
 [石家瑋](https://github.com/F74032099)
